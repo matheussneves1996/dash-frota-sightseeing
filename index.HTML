@@ -1,57 +1,58 @@
-import React from 'react';
-import { Bus, Tool, DollarSign, LayoutDashboard } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Operacional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Garantia de que o fundo será preto mesmo se o Tailwind demorar a carregar */
+        body { background-color: #000; color: #fff; margin: 0; font-family: sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col items-center p-10">
 
-const DashboardCard = ({ title, description, icon: Icon, href }) => (
-  <a 
-    href={href}
-    className="group relative flex flex-col p-6 bg-zinc-900 border border-zinc-800 rounded-lg transition-all hover:border-orange-500 hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]"
-  >
-    <div className="p-3 w-fit rounded-md bg-zinc-800 group-hover:bg-orange-500/10 transition-colors">
-      <Icon className="w-6 h-6 text-orange-500" />
-    </div>
-    <h3 className="mt-4 text-xl font-semibold text-zinc-100">{title}</h3>
-    <p className="mt-2 text-zinc-400 text-sm leading-relaxed">{description}</p>
-    <span className="mt-4 text-xs font-medium text-orange-500 uppercase tracking-wider">Acessar Painel →</span>
-  </a>
-);
+    <header class="w-full max-w-5xl border-b border-zinc-800 pb-10 mb-16">
+        <h1 class="text-4xl font-black uppercase tracking-tighter italic">
+            SISTEMA <span class="text-orange-500">OPERACIONAL</span>
+        </h1>
+        <p class="text-zinc-500 text-xs tracking-widest mt-2 uppercase font-bold">Gestão Centralizada de Transportes</p>
+    </header>
 
-export default function Portal() {
-  return (
-    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8">
-      {/* Header Estilo Industrial */}
-      <header className="max-w-6xl mx-auto mb-16 border-b border-zinc-800 pb-8">
-        <h1 className="text-4xl font-bold tracking-tighter">SISTEMA OPERACIONAL</h1>
-        <p className="text-zinc-500 mt-2 uppercase tracking-widest text-sm">Gestão Integrada de Transportes</p>
-      </header>
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+        
+        <a href="/frota" class="group border border-zinc-800 bg-zinc-900/50 p-8 rounded-lg hover:border-orange-500 transition-all">
+            <div class="text-orange-500 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold uppercase tracking-tight">Frota</h2>
+            <p class="text-zinc-500 text-sm mt-2">Dados técnicos e análise de veículos.</p>
+            <span class="inline-block mt-6 text-orange-500 text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform underline">Entrar →</span>
+        </a>
 
-      <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <DashboardCard 
-          title="Gestão de Frota" 
-          description="Visualização completa de veículos, características técnicas e status operacional."
-          icon={Bus}
-          href="/frota"
-        />
-        <DashboardCard 
-          title="Manutenção & Ocorrências" 
-          description="Registro de avarias, sinistros e acompanhamento de horários perdidos em tempo real."
-          icon={Tool}
-          href="/manutencao"
-        />
-        <DashboardCard 
-          title="Análise de Subsídios" 
-          description="Dashboard financeiro para conferência de repasses e métricas de faturamento."
-          icon={DollarSign}
-          href="/subsidio"
-        />
-      </main>
+        <a href="/manutencao" class="group border border-zinc-800 bg-zinc-900/50 p-8 rounded-lg hover:border-orange-500 transition-all">
+            <div class="text-orange-500 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold uppercase tracking-tight">Manutenção</h2>
+            <p class="text-zinc-500 text-sm mt-2">Ocorrências, avarias e logs reais.</p>
+            <span class="inline-block mt-6 text-orange-500 text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform underline">Entrar →</span>
+        </a>
 
-      <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-zinc-900 flex justify-between items-center text-zinc-600 text-xs">
-        <p>© 2026 GRUPO DE TRANSPORTES - DASHBOARD CENTRAL</p>
-        <div className="flex gap-4">
-          <span>SERVER STATUS: ONLINE</span>
-          <span className="text-green-500">●</span>
-        </div>
-      </footer>
-    </div>
-  );
-}
+        <a href="/subsidio" class="group border border-zinc-800 bg-zinc-900/50 p-8 rounded-lg hover:border-orange-500 transition-all">
+            <div class="text-orange-500 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m.599-1c1.058-.503 1.901-1.218 1.901-2.182 0-1.033-.786-1.782-1.802-2.182m-1.599 3c-1.058-.503-1.901-1.218-1.901-2.182 0-1.033.786-1.782 1.802-2.182m1.599 3V9m0 8V7"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold uppercase tracking-tight">Subsídio</h2>
+            <p class="text-zinc-500 text-sm mt-2">Análise financeira e repasses.</p>
+            <span class="inline-block mt-6 text-orange-500 text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform underline">Entrar →</span>
+        </a>
+
+    </main>
+
+    <footer class="mt-20 text-zinc-700 text-[10px] tracking-[0.5em] uppercase border-t border-zinc-900 pt-8 w-full max-w-5xl text-center">
+        Status do Sistema: <span class="text-green-900">Online</span>
+    </footer>
+
+</body>
+</html>
